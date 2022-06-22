@@ -1,8 +1,8 @@
-using song;
+﻿using song;
 
 namespace Song.Tests;
 
-public class SongShould
+public class RhymerShould
 {
     private const string BaseRhyme = @"There was an old lady who swallowed a fly.
 I don't know why she swallowed a fly - perhaps she'll die!
@@ -43,15 +43,11 @@ She swallowed the spider to catch the fly;
 I don't know why she swallowed a fly - perhaps she'll die!
 
 There was an old lady who swallowed a horse...
-...She's dead, of course!
-";
+...She's dead, of course!";
 
-    [Fact(DisplayName = "Produce the base nursery rhyme")]
-    public void Test1()
-    {
-        using var stringWriter = new StringWriter();
-        Console.SetOut(stringWriter);
-        Program.Main(Array.Empty<string>());
-        Assert.Equal(BaseRhyme, stringWriter.ToString());
-    }
+    [Fact(DisplayName = "Should produce the default Rhyme")]
+    public void Test1() =>
+        Assert.Equal(BaseRhyme, new Rhymer().Produce());
+    
+    
 }
