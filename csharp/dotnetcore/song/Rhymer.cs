@@ -6,11 +6,13 @@ namespace song;
 public class Rhymer
 {
     public string Produce() => Produce(Array.Empty<string>());
-    
+
+    private string SingleRhyme(string animal) =>
+        @$"There was an old lady who swallowed a {animal}.
+I don't know why she swallowed a {animal} - perhaps she'll die!";
     public string Produce(string[] animals) =>
         animals.Any()
-        ? @"There was an old lady who swallowed a fly.
-I don't know why she swallowed a fly - perhaps she'll die!"
+        ? SingleRhyme(animals[0])
         : @"There was an old lady who swallowed a fly.
 I don't know why she swallowed a fly - perhaps she'll die!
 

@@ -50,13 +50,13 @@ There was an old lady who swallowed a horse...
         {
             new object[]
             {
-                "fly ",
+                "fly",
                 @"There was an old lady who swallowed a fly.
 I don't know why she swallowed a fly - perhaps she'll die!"
             },
             new object[]
             {
-                "dog ",
+                "dog",
                 @"There was an old lady who swallowed a dog.
 I don't know why she swallowed a dog - perhaps she'll die!"
             },
