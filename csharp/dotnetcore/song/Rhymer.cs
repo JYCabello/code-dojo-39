@@ -5,15 +5,8 @@ namespace song;
 
 public class Rhymer
 {
-    public string Produce() => Produce(Array.Empty<string>());
-
-    private string SingleRhyme(string animal) =>
-        @$"There was an old lady who swallowed a {animal}.
-I don't know why she swallowed a {animal} - perhaps she'll die!";
-    public string Produce(string[] animals) =>
-        animals.Any()
-        ? SingleRhyme(animals[0])
-        : @"There was an old lady who swallowed a fly.
+    const string defaultRhyme = 
+        @"There was an old lady who swallowed a fly.
 I don't know why she swallowed a fly - perhaps she'll die!
 
 There was an old lady who swallowed a spider;
@@ -53,4 +46,18 @@ I don't know why she swallowed a fly - perhaps she'll die!
 
 There was an old lady who swallowed a horse...
 ...She's dead, of course!";
+
+    public string Produce() => Produce(Array.Empty<string>());
+
+    private string SingleRhyme(string animal) =>
+        @$"There was an old lady who swallowed a {animal}.
+I don't know why she swallowed a {animal} - perhaps she'll die!";
+
+    public string Produce(string[] animals) =>
+        animals.Length switch
+        {
+            1 => SingleRhyme(animals[0]),
+            2 => throw new NotImplementedException(),
+            _ => defaultRhyme
+        };
 }
