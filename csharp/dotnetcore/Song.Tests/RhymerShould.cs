@@ -48,6 +48,12 @@ There was an old lady who swallowed a horse...
     [Fact(DisplayName = "Should produce the default Rhyme")]
     public void Test1() =>
         Assert.Equal(BaseRhyme, new Rhymer().Produce());
-    
-    
+
+    [Fact(DisplayName = "Should produce a Rhyme for a single animal")]
+    public void Test2()
+    {
+        var expectation = @"There was an old lady who swallowed a fly.
+I don't know why she swallowed a fly - perhaps she'll die!";
+        Assert.Equal(expectation, new Rhymer().Produce(new [] { "fly" }));
+    }
 }

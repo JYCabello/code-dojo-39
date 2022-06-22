@@ -1,8 +1,12 @@
-﻿namespace song;
+﻿using System;
+
+namespace song;
 
 public class Rhymer
 {
-    public string Produce() =>
+    public string Produce() => Produce(Array.Empty<string>());
+    
+    public string Produce(string[] animals) =>
         @"There was an old lady who swallowed a fly.
 I don't know why she swallowed a fly - perhaps she'll die!
 
