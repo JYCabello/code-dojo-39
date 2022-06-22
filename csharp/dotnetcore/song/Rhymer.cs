@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace song;
 
@@ -7,7 +8,10 @@ public class Rhymer
     public string Produce() => Produce(Array.Empty<string>());
     
     public string Produce(string[] animals) =>
-        @"There was an old lady who swallowed a fly.
+        animals.Any()
+        ? @"There was an old lady who swallowed a fly.
+I don't know why she swallowed a fly - perhaps she'll die!"
+        : @"There was an old lady who swallowed a fly.
 I don't know why she swallowed a fly - perhaps she'll die!
 
 There was an old lady who swallowed a spider;
