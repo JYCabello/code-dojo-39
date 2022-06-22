@@ -2,9 +2,9 @@
 
 namespace song
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var song = @"There was an old lady who swallowed a fly.
 I don't know why she swallowed a fly - perhaps she'll die!
