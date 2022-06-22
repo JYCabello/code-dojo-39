@@ -62,6 +62,22 @@ I don't know why she swallowed a dog - perhaps she'll die!"
             },
         };
 
+    public static IEnumerable<object[]> TwoAnimals =>
+        new[]
+        {
+            new object[]
+            {
+                new [] { "fly", "spider" }, 
+                @"There was an old lady who swallowed a fly.
+I don't know why she swallowed a fly - perhaps she'll die!
+
+There was an old lady who swallowed a spider;
+That wriggled and wiggled and tickled inside her.
+She swallowed the spider to catch the fly;
+I don't know why she swallowed a fly - perhaps she'll die!"
+            }
+        };
+
     [Fact(DisplayName = "Should produce the default Rhyme")]
     public void Test1() =>
         Assert.Equal(BaseRhyme, new Rhymer().Produce());
@@ -70,4 +86,9 @@ I don't know why she swallowed a dog - perhaps she'll die!"
     [MemberData(nameof(SingleAnimals))]
     public void Test2(string animal, string expected) =>
         Assert.Equal(expected, new Rhymer().Produce(new[] { animal }));
+
+    [Theory(DisplayName = "Should produce a Rhyme for a two animals")]
+    [MemberData(nameof(TwoAnimals))]
+    public void Test3(string[] animals, string expected) =>
+        Assert.Equal(expected, new Rhymer().Produce(animals));
 }
