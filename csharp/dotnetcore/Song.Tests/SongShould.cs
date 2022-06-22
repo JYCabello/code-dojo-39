@@ -43,7 +43,8 @@ She swallowed the spider to catch the fly;
 I don't know why she swallowed a fly - perhaps she'll die!
 
 There was an old lady who swallowed a horse...
-...She's dead, of course!\r\n";
+...She's dead, of course!
+";
 
     [Fact(DisplayName = "Produce the base nursery rhyme")]
     public void Test1()

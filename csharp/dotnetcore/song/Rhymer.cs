@@ -54,11 +54,13 @@ There was an old lady who swallowed a horse...
 I don't know why she swallowed a {animal} - perhaps she'll die!";
 
     private string SecondVerse(string animal, string animal2) =>
-        FirstVerse(animal) + Environment.NewLine +
-        @$"There was an old lady who swallowed a {animal2};
+        @$"{FirstVerse(animal)}
+
+There was an old lady who swallowed a {animal2};
 That wriggled and wiggled and tickled inside her.
 She swallowed the {animal2} to catch the {animal};
 I don't know why she swallowed a {animal} - perhaps she'll die!";
+
     public string Produce(string[] animals) =>
         animals.Length switch
         {
